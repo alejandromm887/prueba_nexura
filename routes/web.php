@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // editar para seleccionar la deseada
     return view('welcome');
 });
