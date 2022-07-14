@@ -16,10 +16,10 @@ return new class extends Migration
         
         Schema::create('empleado_rol', function (Blueprint $table) {
             $table->foreignId('empleado_id',11)->nullable(false)->comment('identificador del empleado');
-            $table->foreign('empleado_id')->references('id')->on('empleados');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
             // $table->foreignId('empleado_id')->constrained('empleados')->onDelete('cascade');
             $table->foreignId('rol_id',255)->nullable(false)->comment('identificador del rol');
-            $table->foreign('rol_id')->references('id')->on('roles');
+            $table->foreign('rol_id')->references('id')->on('roles')->onDelete('cascade');
             // $table->foreignId('rol_id')->constrained('roles')->onDelete('cascade');
         });
         //insert
