@@ -19,12 +19,10 @@ return new class extends Migration
             $table->string('nombre',255)->nullable(false)->comment('Nombre completo del empleado. Campo tipo Text. Solo debe permitir letras con o sin tilde y espacios. No se admiten caracteres especiales ni numeros. Obligatorio');
             $table->string('email',255)->nullable(false)->comment('Correo electronico del empleado. Campo de tipo de Text|Enmail. Solo permite escritura de correo. Obligatorio.');
             $table->char('sexo',1)->nullable(false)->comment('Campo de tipo Radio Button. M para Masculino. F para Femenino. F para Femenino. Obligatorio');
-            $table->foreignId('area_id',11)->nullable(false)->comment('Area de la empresa a la que pertenece el empleado. Campo tipo Select. Obligatorio.');
-            // $table->foreignId('area_id')->constrained('areas')->onDelete('cascade');
-            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
+            $table->foreignId('area_id',11)->nullable(false)->comment('Area de la empresa a la que pertenece el empleado. Campo tipo Select. Obligatorio.');            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
             $table->char('boletin',11)->nullable(false)->default(0)->comment('1 para Recibir boletin. 0 para No recibir boletin. Campo de tipo Check box. Opcional.');
             $table->text('descripcion',255)->nullable(false)->comment('Se describe la experiencia del empleado. Campo de tipo textarea. Obligatorio.');
-            // foranea
+        
             
         });
         //Insert

@@ -4,7 +4,7 @@
 <div class="card" style="margin:20px;">
   <div class="card-header">Crear nuevo empleado</div>
   <div class="card-body mr-3 ml-3">
-    <form action="{{ url('empleados') }}" method="post">
+    <form action="{{ url('empleados') }}" name="form" method="post">
       {!! csrf_field() !!}
     
       <div class="row justify-content-center">
@@ -81,7 +81,7 @@
       </div>
       <div class="row">
         <div class="col-md-2">
-          <input type="submit" value="Guardar" class="btn btn-primary">
+          <input type="submit" value="Guardar" class="btn btn-primary" onclick="valida_envia()">
         </div>
         <div class="col-md">
           <a href="{{ url('/empleados/') }}" class="btn btn-success " title="Añadir empleados">

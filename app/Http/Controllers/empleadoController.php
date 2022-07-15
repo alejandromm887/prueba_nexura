@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Models\Area;
 use App\Models\Roles;
 use App\Models\Empleado;
@@ -27,7 +28,7 @@ class empleadoController extends Controller
     {
         $input = $request->all();
         Empleado::create($input);
-        return redirect('empleados')->with('flash_message', 'Empleado agregado!');  
+        return redirect('empleados')->with('Empleado_agregado', 'Empleado agregado!');  
     }
 
     public function show($id)
@@ -47,12 +48,12 @@ class empleadoController extends Controller
         $empleados = Empleado::find($id);
         $input = $request->all();
         $empleados->update($input);
-        return redirect('empleados')->with('flash_message', 'Empleado actualizado!');  
+        return redirect('empleados')->with('Empleado_actualizado', 'Empleado actualizado!');  
     }
     public function destroy($id)
     {
         Empleado::destroy($id);
-        return redirect('empleados')->with('flash_message', 'Empleado eliminado!');  
+        return redirect('empleados')->with('Empleado_eliminado', 'Empleado eliminado!');  
     }
 
 }
